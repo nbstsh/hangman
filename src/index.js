@@ -14,6 +14,8 @@ const render = () => {
 }
 
 const renderPuzzleDOM = () => {
+    puzzleEl.innerHTML = ''
+
     game.puzzle.split('').forEach((letter) => {
         const letterEl = document.createElement('span')
         letterEl.textContent = letter
