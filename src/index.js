@@ -37,4 +37,11 @@ const renderMessageDOM = () => {
     }
 }
 
+
+window.addEventListener('keydown', (e) => {
+    game.checkLetter(e.key.toLowerCase())
+    game.recalculatingStatus()
+    render()
+})
+
 render()
