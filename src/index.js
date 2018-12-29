@@ -18,6 +18,7 @@ const startGame = async () => {
     render()
 }
 
+
 const render = () => {
     renderPuzzleDOM()
     renderGuessesDOM()
