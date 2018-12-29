@@ -24,6 +24,17 @@ class Hangman {
 
         this.guessedLetters.push(letter)
     }
+    recalculatingStatus() {
+        const isMatch = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
+
+        if (this.remainingGuesses === 0) {
+            this.status = 'failed'
+        } else if (isMatch) {
+            this.status = 'finished'
+        } else {
+            this.status = 'playing'
+        }
+    }
 }
 
 
