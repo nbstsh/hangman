@@ -1,11 +1,22 @@
 import Hangman from './hangman'
 import { getPuzzle } from './request'
 
-const remainingGuesses = 5
-const game = new Hangman('default', remainingGuesses)
+const setting = {
+    remainingGuesses: 10,
+    wordCount: 2
+}
+
+let game = new Hangman('default', setting.remainingGuesses)
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 const messageEl = document.querySelector('#message')
+
+
+const startGame = async () => {
+    const word = await getPuzzle(setting.wordCount)
+    game = new Hangman(word, setting.remainingGuesses)
+    render()
+}
 
 const render = () => {
     renderPuzzleDOM()
@@ -51,4 +62,6 @@ document.querySelector('#reset').addEventListener('click', (e) => {
     render()
 })
 
-render()
+
+
+startGame()
