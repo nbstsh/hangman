@@ -35,6 +35,14 @@ class Hangman {
             this.status = 'playing'
         }
     }
+    get message() {
+        const message = {
+            playing: `Guesses left: ${this.remainingGuesses}`,
+            failed: `Nice try! The word was "${this.word.join('')}".`,
+            finished: 'Great work! you guessed the word!'
+        }
+        return message[this.status]
+    }
 }
 
 
