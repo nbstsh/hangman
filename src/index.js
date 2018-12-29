@@ -57,10 +57,7 @@ window.addEventListener('keydown', (e) => {
     render()
 })
 
-document.querySelector('#reset').addEventListener('click', (e) => {
-    game.reset()
-    render()
-})
+document.querySelector('#reset').addEventListener('click', startGame)
 
 
 
